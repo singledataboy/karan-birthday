@@ -1,43 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Karan!</title>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Rudra 🎉</title>
   <style>
     body {
-      background: linear-gradient(to bottom, #ffe4e1, #ffd700);
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to top, #ffe6f0, #ccf2ff);
+      overflow: hidden;
       text-align: center;
-      padding: 40px;
     }
+
     h1 {
-      color: #d63384;
+      color: #ff3399;
+      margin-top: 20px;
       font-size: 3em;
     }
+
     p {
-      font-size: 1.3em;
+      font-size: 1.5em;
       color: #333;
-      margin-top: 20px;
     }
+
     img {
+      border-radius: 20px;
       width: 300px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      height: auto;
       margin-top: 20px;
     }
-    .footer {
-      margin-top: 30px;
-      font-size: 1em;
-      color: #555;
+
+    .balloon {
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      background: red;
+      border-radius: 50% 50% 50% 50%;
+      animation: float 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: -100px;
+        left: calc(100% * var(--i));
+      }
+      100% {
+        bottom: 110%;
+        left: calc(100% * var(--i) + 30px);
+      }
+    }
+
+    .star {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: yellow;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -10px;
+        left: calc(100% * var(--i));
+        transform: rotate(0deg);
+      }
+      100% {
+        top: 110%;
+        left: calc(100% * var(--i) + 30px);
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday Karan! 🎂</h1>
-  <img src="karan_birthday_photo_resized.png" alt="Karan's Birthday Photo" />
-  <p>Wishing you a day filled with love, laughter, and endless joy. You're amazing, Karan! 🎈🎁</p>
-  <div class="footer">Made with ❤️ by your friend</div>
+  <h1>🎂 Happy Birthday Rudra! 🎂</h1>
+  <p>Wishing you all the happiness, fun, and love in the world. Enjoy your special day!</p>
+  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aH... (truncated)" alt="Rudra's Birthday Photo" />
+
+  <audio autoplay loop>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Balloons -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const b = document.createElement('div');
+      b.className = 'balloon';
+      b.style.setProperty('--i', Math.random());
+      b.style.background = ['red', 'blue', 'green', 'yellow', 'orange'][Math.floor(Math.random() * 5)];
+      document.body.appendChild(b);
+    }
+
+    // Falling Stars
+    for (let i = 0; i < 30; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.setProperty('--i', Math.random());
+      document.body.appendChild(s);
+    }
+  </script>
 </body>
 </html>
